@@ -1,6 +1,6 @@
 [project]
 name = "UFCData"
-version = "0.1.0"
+version = "0.1.1"
 description = "Obtain UFC data and functions to manipulate it"
 requires-python = ">=3.10"
 
