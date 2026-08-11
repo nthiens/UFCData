@@ -21,6 +21,7 @@ def get_data():
     print(keys)
     print()
     print("For example:")
-    print("data = get_data()['past_events']")
+    print("data = get_data()")
+    print("past_events = data['past_events'].copy()")
 
     return ufc_data
