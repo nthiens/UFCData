@@ -1,0 +1,12 @@
+[project]
+name = "ufcdata"
+version = "0.1.0"
+description = "Obtain UFC data and functions to manipulate it"
+requires-python = ">=3.10"
+
+dependencies = [
+    "huggingface-hub",
+    "pandas",
+    "numpy",
+    "glicko2",
+]
