@@ -181,7 +181,7 @@ def get_fighter_statistic(fighter_link, fighter_bio, fights_df, rounds_df,
 
     record = get_fighter_history(fighter_link, fighter_bio, fights_df)
 
-    date = ("2001-01-01")
+    date = ("2201-01-01")
 
     if len(record) == 0:
         columns = [
