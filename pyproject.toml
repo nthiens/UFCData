@@ -1,6 +1,6 @@
 [project]
 name = "UFCData"
-version = "0.1.1"
+version = "0.7.0"
 description = "Obtain UFC data and functions to manipulate it"
 requires-python = ">=3.10"
 
@@ -9,4 +9,6 @@ dependencies = [
     "pandas",
     "numpy",
     "glicko2",
+    "rapidfuzz",
+    "matplotlib",
 ]
