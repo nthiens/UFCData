@@ -355,8 +355,14 @@ data = ufc.get_data()
 
 fights_df = data["past_fights"].copy()
 
-fights_df["Fighter 1 Odds"] = fights_df["Fighter 1 Odds"].apply(ufc.convert_odds)
-fights_df["Fighter 1 Probability"] = fights_df["Fighter 1 Odds"].apply(ufc.convert_odds, probability=True)
+fights_df["Fighter 1 Odds"] = fights_df["Fighter 1 Odds"].apply(
+    ufc.convert_odds
+)
+
+fights_df["Fighter 1 Probability"] = fights_df["Fighter 1 Odds"].apply(
+    ufc.convert_odds,
+    probability=True
+)
 ```
 
 <br>
@@ -467,7 +473,16 @@ import ufcdata as ufc
 data = ufc.get_data()
 
 fights_df = data["past_fights"].copy()
-fights_df = fights_df[["Date", "Event Link", "Fighter 1", "Fighter 1 Odds","Fighter 2", "Fighter 2 Odds"]]
+fights_df = fights_df[
+    [
+        "Date",
+        "Event Link",
+        "Fighter 1",
+        "Fighter 1 Odds",
+        "Fighter 2",
+        "Fighter 2 Odds",
+    ]
+]
 
 cols_1 = [
     "Fighter 1",
@@ -633,8 +648,15 @@ past_fights = past_fights[~past_fights["Fighter 1 Outcome"].isin(["NC", "D"])]
 past_fights = past_fights[past_fights[["Fighter 1 Odds", "Fighter 2 Odds"]].notna().all(axis=1)]
 
 ## Convert odds to probabilities
-past_fights["Fighter 1 Probability"] = past_fights["Fighter 1 Odds"].apply(ufc.convert_odds, probability=True)
-past_fights["Fighter 2 Probability"] = past_fights["Fighter 2 Odds"].apply(ufc.convert_odds, probability=True)
+past_fights["Fighter 1 Probability"] = (
+    past_fights["Fighter 1 Odds"]
+    .apply(ufc.convert_odds, probability=True)
+)
+
+past_fights["Fighter 2 Probability"] = (
+    past_fights["Fighter 2 Odds"]
+    .apply(ufc.convert_odds, probability=True)
+)
 
 ## Create the data for cross validation and final testing
 folds = 15
@@ -682,8 +704,15 @@ ufc.plot_test(test_accuracy)
 ## Deploy the model
 future_fights = data["future_fights"].copy()
 
-future_fights["Fighter 1 Probability"] = future_fights["Fighter 1 Odds"].apply(ufc.convert_odds, probability=True)
-future_fights["Fighter 2 Probability"] = future_fights["Fighter 2 Odds"].apply(ufc.convert_odds, probability=True)
+future_fights["Fighter 1 Probability"] = (
+    future_fights["Fighter 1 Odds"]
+    .apply(ufc.convert_odds, probability=True)
+)
+
+future_fights["Fighter 2 Probability"] = (
+    future_fights["Fighter 2 Odds"]
+    .apply(ufc.convert_odds, probability=True)
+)
 
 future_fights["Predicted Winner"] = np.where(
     future_fights["Fighter 1 Probability"] > future_fights["Fighter 2 Probability"],
@@ -696,7 +725,17 @@ future_fights["Predicted Winner"] = np.where(
     future_fights["Fighter 2"]
 )
 
-future_fights = future_fights[["Date", "Event Link", "Fight Link", "Fighter 1", "Fighter 2", "Predicted Winner"]]
+future_fights = future_fights[
+    [
+        "Date",
+        "Event Link",
+        "Fight Link",
+        "Fighter 1",
+        "Fighter 2",
+        "Predicted Winner"
+    ]
+]
+
 future_fights
 
 ```
