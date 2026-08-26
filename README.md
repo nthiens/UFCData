@@ -295,7 +295,7 @@ data = ufc.get_data()
 
 fighter_bio = data["fighter_bio"].copy()
 fights_df = data["past_fights"].copy()
-rounds_df = data['past_rounds'].copy()
+rounds_df = data['rounds'].copy()
 future_df = data['future_fights']
 
 jon_jones = ufc.search(
@@ -355,7 +355,7 @@ data = ufc.get_data()
 fights_df = data["past_fights"].copy()
 
 fights_df["Fighter 1 Probability"] = fights_df["Fighter 1 Odds"].apply(
-    ufc.convert_odds,
+    ufc.convert_odds
 )
 ```
 
@@ -644,12 +644,12 @@ past_fights = past_fights[past_fights[["Fighter 1 Odds", "Fighter 2 Odds"]].notn
 ## Convert odds to probabilities
 past_fights["Fighter 1 Probability"] = (
     past_fights["Fighter 1 Odds"]
-    .apply(ufc.convert_odds, probability=True)
+    .apply(ufc.convert_odds)
 )
 
 past_fights["Fighter 2 Probability"] = (
     past_fights["Fighter 2 Odds"]
-    .apply(ufc.convert_odds, probability=True)
+    .apply(ufc.convert_odds)
 )
 
 ## Create the data for cross validation and final testing
@@ -700,12 +700,12 @@ future_fights = data["future_fights"].copy()
 
 future_fights["Fighter 1 Probability"] = (
     future_fights["Fighter 1 Odds"]
-    .apply(ufc.convert_odds, probability=True)
+    .apply(ufc.convert_odds)
 )
 
 future_fights["Fighter 2 Probability"] = (
     future_fights["Fighter 2 Odds"]
-    .apply(ufc.convert_odds, probability=True)
+    .apply(ufc.convert_odds)
 )
 
 future_fights["Predicted Winner"] = np.where(
