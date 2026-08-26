@@ -2,9 +2,9 @@ import re
 import pandas as pd
 import numpy as np
 
-def convert_odds(odds, probability=False):
+def convert_odds(odds):
     """
-    Convert American betting odds to a numeric value or implied probability.
+    Convert American betting odds to implied probability.
 
     Parameters
     ----------
@@ -12,32 +12,22 @@ def convert_odds(odds, probability=False):
         American betting odds. The function extracts the first signed or
         unsigned integer from the input. Missing values return None.
 
-    probability : bool, default=False
-        If False, return the extracted American odds as an integer.
-        If True, return the implied probability as a decimal.
-
     Returns
     -------
-    int or float or None
-        The extracted American odds if probability=False, otherwise the
-        implied probability. Returns None for missing values.
+    float or None
+        The implied probability as a decimal. Returns None for missing values.
 
     Examples
     --------
     >>> convert_odds("+120")
-    120
+    0.45454545454545453
     >>> convert_odds("-400")
-    -400
-    >>> convert_odds("-400", probability=True)
     0.8
     """
     if pd.isna(odds):
         return None
 
     odds = int(re.search(r'[+-]?\d+', str(odds)).group())
-
-    if not probability:
-        return odds
 
     if odds < 0:
         return -odds / (-odds + 100)
