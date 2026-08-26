@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "UFCData"
-version = "0.7.1"
+version = "0.7.2"
 description = "Obtain UFC data and functions to manipulate it"
 requires-python = ">=3.10"
 
@@ -12,3 +16,7 @@ dependencies = [
     "rapidfuzz",
     "matplotlib",
 ]
+
+[tool.setuptools.packages.find]
+include = ["ufcdata*"]
+exclude = ["scraper*", "UFCData_backup*"]
