@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.2] - 2026-08-26
+## Changed
+-  `convert_odds(odds)` refactored to remove parameter
+
 ## [0.7.1] - 2026-08-13
 ### Fixed
 -  `get_fighter_statistic(fighter_link, fighter_bio, fights_df, rounds_df, r=1500, k=30, s=400)` fixed
