@@ -28,9 +28,9 @@ jobs:
       - name: Prepare data directory
         run: |
           mkdir -p scraper/scraper_data
-          find scraper/scraper_data -type f \( -name "*.csv" -o -name "*.pkl" \) -delete
+          find scraper/scraper_data -type f \( -name "*.csv" -o -name "*.pkl" -o -name "*.txt" \) -delete
 
-      - name: Download CSV and PKL files
+      - name: Download CSV, PKL, and TXT files
         run: |
           python - <<'PY'
           from huggingface_hub import snapshot_download
@@ -41,7 +41,8 @@ jobs:
               local_dir="scraper/scraper_data",
               allow_patterns=[
                   "*.csv",
-                  "*.pkl"
+                  "*.pkl",
+                  "*.txt"
               ]
           )
           PY
