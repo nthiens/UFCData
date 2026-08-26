@@ -322,16 +322,16 @@ jon_jones_current, jon_jones_past = ufc.get_fighter_statistic(
 The function `convert_odds()` converts American betting odds from strings into integers or floating point numbers.
 
 ```python
-convert_odds(odds, probability)
+convert_odds(odds)
 ```
 
 ### Parameters
 
-* `odds` — American betting odds as a string.
+* `odds` — American betting odds as a string, integer, float or None.
 
 ### Returns
 
-If probability=True, it returns a `float` representing the implied probability of the betting odds.
+Returns a `float` representing the implied probability of the betting odds.
 
 For positive American odds:
 
@@ -344,7 +344,6 @@ For negative American odds:
 ```text
 Probability = -odds / (-odds + 100)
 ```
-If probability=False, takes the string and converts it to an integer.
 
 ### Example
 
@@ -355,13 +354,8 @@ data = ufc.get_data()
 
 fights_df = data["past_fights"].copy()
 
-fights_df["Fighter 1 Odds"] = fights_df["Fighter 1 Odds"].apply(
-    ufc.convert_odds
-)
-
 fights_df["Fighter 1 Probability"] = fights_df["Fighter 1 Odds"].apply(
     ufc.convert_odds,
-    probability=True
 )
 ```
 
