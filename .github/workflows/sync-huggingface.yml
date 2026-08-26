@@ -1,0 +1,61 @@
+name: Sync Hugging Face data
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Hugging Face Hub
+        run: pip install -U huggingface_hub
+
+      - name: Prepare data directory
+        run: |
+          mkdir -p UFCData/scraper/scraper_data
+          find UFCData/scraper/scraper_data -type f \( -name "*.csv" -o -name "*.pkl" \) -delete
+
+      - name: Download CSV and PKL files
+        run: |
+          python - <<'PY'
+          from huggingface_hub import snapshot_download
+
+          snapshot_download(
+              repo_id="JunoML/MMA",
+              repo_type="dataset",
+              local_dir="UFCData/scraper/scraper_data",
+              allow_patterns=[
+                  "*.csv",
+                  "*.pkl"
+              ]
+          )
+          PY
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add UFCData/scraper/scraper_data/
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Sync UFC data from Hugging Face"
+            git push
+          fi
