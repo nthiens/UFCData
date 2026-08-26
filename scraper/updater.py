@@ -7,7 +7,6 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import pickle
 from huggingface_hub import upload_file
-import pickle
 
 ## Update past_events
 past_events = asyncio.run(get_past_events())
@@ -55,12 +54,24 @@ ufc_data = {
 with open("ufc_data.pkl", "wb") as f:
     pickle.dump(ufc_data, f)
 
-# Upload to HuggingFace
+# Upload pickle file to HuggingFace
 upload_file(
     path_or_fileobj="ufc_data.pkl",
     path_in_repo="ufc_data.pkl",
     repo_id="JunoML/MMA",
     repo_type="dataset"
 )
+
+# Upload CSV files to HuggingFace
+csv_files = ["past_events.csv", "future_events.csv", "fighter_bio.csv",
+             "past_fights.csv", "future_fights.csv", "rounds.csv"]
+
+for csv_file in csv_files:
+    upload_file(
+        path_or_fileobj=f"scraper/scraper_data/{csv_file}",
+        path_in_repo=csv_file,
+        repo_id="JunoML/MMA",
+        repo_type="dataset"
+    )
 
 print("Update complete!")
