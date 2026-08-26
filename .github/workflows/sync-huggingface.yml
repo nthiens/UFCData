@@ -27,8 +27,8 @@ jobs:
 
       - name: Prepare data directory
         run: |
-          mkdir -p UFCData/scraper/scraper_data
-          find UFCData/scraper/scraper_data -type f \( -name "*.csv" -o -name "*.pkl" \) -delete
+          mkdir -p scraper/scraper_data
+          find scraper/scraper_data -type f \( -name "*.csv" -o -name "*.pkl" \) -delete
 
       - name: Download CSV and PKL files
         run: |
@@ -38,7 +38,7 @@ jobs:
           snapshot_download(
               repo_id="JunoML/MMA",
               repo_type="dataset",
-              local_dir="UFCData/scraper/scraper_data",
+              local_dir="scraper/scraper_data",
               allow_patterns=[
                   "*.csv",
                   "*.pkl"
@@ -51,7 +51,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add UFCData/scraper/scraper_data/
+          git add scraper/scraper_data/
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
