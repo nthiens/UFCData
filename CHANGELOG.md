@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.3] - 2026-08-26
+## Changed
+-  `search(data, column, query, matches)` refactored
+-  `get_elo(r, k, s)` refactored to remove parameters
+
 ## [0.7.2] - 2026-08-26
 ## Changed
 -  `convert_odds(odds)` refactored to remove parameter
