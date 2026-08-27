@@ -1,5 +1,4 @@
 import pandas as pd
-from glicko2 import Player
 
 #@title Elo function
 def expected_score(rating, opponent_rating, s):
@@ -11,7 +10,7 @@ def update_rating(rating, k, outcome, expected):
 
 # Elo function
 #  Make sure fights are sorted from most recent to least recent. Gets Elo prior to fight.
-def get_elo(fight_df, fighter_df, r=1500, k=30, s=400):
+def get_elo(r=1500, k=30, s=400):
   """
     Calculates pre-fight Elo ratings for UFC fighters.
 
@@ -22,13 +21,6 @@ def get_elo(fight_df, fighter_df, r=1500, k=30, s=400):
 
     Parameters
     ----------
-    fight_df : pandas.DataFrame
-        UFC fight data sorted from most recent to least recent.
-        Must contain fighter links, fight outcomes, and the fight
-        information required to construct the output.
-    fighter_df : pandas.DataFrame
-        DataFrame containing fighter information. Must contain a
-        "Fighter Link" column used to identify each fighter.
     r : float, default=1500
         Initial Elo rating assigned to each fighter.
     k : float, default=30
@@ -47,20 +39,25 @@ def get_elo(fight_df, fighter_df, r=1500, k=30, s=400):
         Fight-level DataFrame containing the original fight information
         and the Elo rating of each fighter immediately before the fight.
 
-    Notes
-    -----
-    The input fight data should be sorted from most recent to least
-    recent. The function reverses this order internally to process
-    fights chronologically, then returns the resulting data in the
-    original order.
-
     Examples
     --------
-    >>> fighter_elo, fight_elo = get_elo(fight_df, fighter_df)
+    >>> fighter_elo, fight_elo = get_elo(1000, 10, 20)
     >>> fight_elo[["Fighter 1", "Fighter 1 Elo",
     ...            "Fighter 2", "Fighter 2 Elo"]].head()
   """
 
+
+  past_fights = (
+      f"https://huggingface.co/datasets/JunoML/MMA/resolve/main/"
+      f"past_fights.csv"
+  )
+
+  fighter_bio = (
+      f"https://huggingface.co/datasets/JunoML/MMA/resolve/main/"
+      f"fighter_bio.csv"
+  )
+  
+  fight_df = pd.read_csv(past_fights)
   fight_df = fight_df[::-1]
 
   original_fight_df = fight_df.copy()
@@ -69,12 +66,14 @@ def get_elo(fight_df, fighter_df, r=1500, k=30, s=400):
   fighter_2_elo = []
 
   ## Create a dictionary of fighters and their Elo
+  fighter_df = pd.read_csv(fighter_bio)
   fighter_df = fighter_df.copy()
   fighter_df["Elo"] = r
   fighter_df = dict(zip(fighter_df["Fighter Link"], fighter_df["Elo"]))
 
   ## Create a list of fights
-  fight_df = fight_df[["Fighter 1 Link", "Fighter 1 Outcome", "Fighter 2 Link", "Fighter 2 Outcome"]]
+  fight_df = fight_df[["Fighter 1 Link", "Fighter 1 Outcome", 
+                       "Fighter 2 Link", "Fighter 2 Outcome"]]
   fight_df = fight_df.values.tolist()
 
 
@@ -120,11 +119,15 @@ def get_elo(fight_df, fighter_df, r=1500, k=30, s=400):
     ],
     axis=1
   )
-  elo = elo[['Date', 'Event Link', 'Fight Number', 'Fight Link', 'Weight Class',
-       'Gender', 'Title', 'Fighter 1', 'Fighter 1 Elo', 'Fighter 1 Odds', 'Fighter 1 Link',
-       'Fighter 1 Outcome', 'Fighter 1 Bonus', 'Fighter 2','Fighter 2 Elo', 'Fighter 2 Odds',
-       'Fighter 2 Link', 'Fighter 2 Outcome', 'Fighter 2 Bonus', 'Method',
-       'Round', 'Time', 'Time Format', 'Referee', 'Details']]
+  elo = elo[['Date', 'Event Link', 'Fight Number',
+             'Fight Link', 'Weight Class', 'Gender', 
+             'Title', 'Fighter 1', 'Fighter 1 Elo', 
+             'Fighter 1 Odds', 'Fighter 1 Link',
+             'Fighter 1 Outcome', 'Fighter 1 Bonus', 
+             'Fighter 2','Fighter 2 Elo', 'Fighter 2 Odds',
+             'Fighter 2 Link', 'Fighter 2 Outcome',
+             'Fighter 2 Bonus', 'Method', 'Round', 'Time',
+             'Time Format', 'Referee', 'Details']]
   past_elo = elo[::-1].copy()
   current_elo = fighter_df
   return (current_elo, past_elo)
