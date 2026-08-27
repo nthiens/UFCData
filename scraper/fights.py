@@ -653,7 +653,9 @@ async def get_past_fights(concurrency=5):
     tapology = tapology[['Date', 'Event Link', 'Event',
                         'Location', 'Venue', 'Attendance',
                         'Tapology Link']]
-    # tapology = tapology.iloc[:-24]
+    
+    ## Earlier fights have no odds and will return an error
+    tapology = tapology.iloc[:-24]
 
     tapology = await (tapology_fight_odds(tapology))
     tapology = tapology.drop(columns=["Time Format"])
