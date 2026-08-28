@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "UFCData"
-version = "0.7.3"
+version = "0.8.2"
 description = "Obtain UFC data and functions to manipulate it"
 requires-python = ">=3.10"
 
@@ -15,6 +15,10 @@ dependencies = [
     "glicko2",
     "rapidfuzz",
     "matplotlib",
+    "pyvis",
+    "requests",
+    "Pillow",
+    "ipython",
 ]
 
 [tool.setuptools.packages.find]
