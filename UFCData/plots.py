@@ -225,8 +225,6 @@ def plot_fight_graph(fighter_link, degree, notebook=False):
         central_gravity=0.01
     )
 
-    print("Loading. This may take a while.")
-
     graph = fighter_graph(fighter_link, degree)
     for node in graph:
         add_fight(node[0], node[1], node[2], net)
@@ -267,7 +265,6 @@ def plot_fight_graph(fighter_link, degree, notebook=False):
             )
         )
 
-    print("Done!")
 
 ## Plot body 
 
