@@ -2,9 +2,9 @@ Fighter Link,Name,Nickname,Height,Weight,Reach,Stance,Total W,Total L,Total D,To
 http://ufcstats.com/fighter-details/93fe7332d16c6ad9,Tom Aaron,,,155.0,,,5,3,0,0,1978-07-13
 http://ufcstats.com/fighter-details/15df64c02b6b0fde,Danny Abbadi,The Assassin,71.0,155.0,,Orthodox,4,6,0,0,1983-07-03
 http://ufcstats.com/fighter-details/59a9d6dac61c2540,Nariman Abbasov,Bayraktar,68.0,155.0,66.0,Orthodox,28,4,0,0,1994-02-01
-http://ufcstats.com/fighter-details/4961467134abd8be,Darion Abbey,,74.0,265.0,80.0,Orthodox,9,5,0,0,1993-02-25 00:00:00
-http://ufcstats.com/fighter-details/b361180739bed4b0,David Abbott,Tank,72.0,265.0,,Switch,10,15,0,0,1965-04-26 00:00:00
-http://ufcstats.com/fighter-details/3329d692aea4dc28,Hamdy Abdelwahab,The Hammer,74.0,265.0,72.0,Southpaw,7,1,0,1,1993-01-22 00:00:00
+http://ufcstats.com/fighter-details/4961467134abd8be,Darion Abbey,,74.0,265.0,80.0,Orthodox,9,5,0,0,
+http://ufcstats.com/fighter-details/b361180739bed4b0,David Abbott,Tank,72.0,265.0,,Switch,10,15,0,0,
+http://ufcstats.com/fighter-details/3329d692aea4dc28,Hamdy Abdelwahab,The Hammer,74.0,265.0,72.0,Southpaw,7,1,0,1,
 http://ufcstats.com/fighter-details/8f3837b4c06f3d1e,Farida Abdueva,,63.0,115.0,66.0,Orthodox,8,1,0,0,2004-05-15
 http://ufcstats.com/fighter-details/841695e02c99a521,Mansur Abdul-Malik,,74.0,185.0,80.0,Orthodox,9,2,1,0,1997-10-07
 http://ufcstats.com/fighter-details/24cb8f04de1310cb,Akbar Abdullaev,Bakal,,155.0,,,13,0,0,0,1997-09-20
@@ -918,8 +918,8 @@ http://ufcstats.com/fighter-details/20697b334f6c0a45,Justin Davis,Dangerous,71.0
 http://ufcstats.com/fighter-details/6dab8ce5e4bffe77,LC Davis,,68.0,135.0,69.0,Southpaw,23,8,0,0,1980-10-28
 http://ufcstats.com/fighter-details/a993ef2dd36cea5f,Lemont Davis,,68.0,170.0,,Orthodox,2,6,0,0,
 http://ufcstats.com/fighter-details/b7d524c77c27389b,Marcus Davis,The Irish Hand Grenade,70.0,170.0,70.0,Southpaw,22,11,0,1,1973-08-24
-http://ufcstats.com/fighter-details/c8661e204c66f325,Mike Davis,,,,,,2,0,0,0,
 http://ufcstats.com/fighter-details/fb3e61720be4690c,Mike Davis,Beast Boy,72.0,155.0,72.0,Orthodox,12,4,0,0,1992-10-07
+http://ufcstats.com/fighter-details/c8661e204c66f325,Mike Davis,,,,,,2,0,0,0,
 http://ufcstats.com/fighter-details/902ab9197b83d0db,Phil Davis,Mr. Wonderful,74.0,205.0,79.0,Orthodox,17,4,0,1,1984-09-25
 http://ufcstats.com/fighter-details/2549d63da9c456cb,Rick Davis,The Flying Squirrel,69.0,155.0,,Orthodox,3,1,1,0,
 http://ufcstats.com/fighter-details/2c9d00968f818270,Hakeem Dawodu,Mean,68.0,145.0,73.0,Orthodox,13,4,1,0,1991-07-02
@@ -1429,8 +1429,8 @@ http://ufcstats.com/fighter-details/0a66de3a797cf73a,Alan Gomez,,,155.0,,,2,0,0,
 http://ufcstats.com/fighter-details/489413d3be819647,David Gomez,,,155.0,,,1,2,0,0,1983-08-08
 http://ufcstats.com/fighter-details/e90f4291f93708e6,Edson Gomez,,68.0,170.0,69.0,Switch,6,2,0,0,1991-02-23
 http://ufcstats.com/fighter-details/a0a680fe2f6cc8e6,Frank Gomez,,70.0,135.0,67.0,Orthodox,10,6,0,0,1986-03-31
-http://ufcstats.com/fighter-details/0778f94eb5d588a5,Joey Gomez,KO King,70.0,135.0,73.0,Orthodox,6,2,0,0,1986-07-21
 http://ufcstats.com/fighter-details/3a28e1e641366308,Joey Gomez,,70.0,155.0,71.0,Orthodox,7,1,0,0,1989-08-29
+http://ufcstats.com/fighter-details/0778f94eb5d588a5,Joey Gomez,KO King,70.0,135.0,73.0,Orthodox,6,2,0,0,1986-07-21
 http://ufcstats.com/fighter-details/513e84bfe65ff509,Luis Gomez,Tiger Junior,67.0,145.0,68.0,Orthodox,4,1,0,0,1995-01-28
 http://ufcstats.com/fighter-details/af1e5c64b8663aa0,Sergio Gomez,,66.0,155.0,,Orthodox,10,3,0,0,1982-04-29
 http://ufcstats.com/fighter-details/1e35aa8955794580,Ulysses Gomez,Useless,66.0,125.0,,Orthodox,9,5,0,0,1983-05-25
@@ -1914,8 +1914,8 @@ http://ufcstats.com/fighter-details/511e82663651438d,Michael Johnson,The Menace,
 http://ufcstats.com/fighter-details/fa2fca260beeb9c0,Ricky Johnson,,68.0,145.0,,Orthodox,10,6,0,0,
 http://ufcstats.com/fighter-details/552b09cbf13b6328,Taylor Johnson,Tombstone,72.0,185.0,74.0,Switch,5,1,0,0,1990-11-09
 http://ufcstats.com/fighter-details/cc900af167fbedfd,Timothy Johnson,,75.0,265.0,77.0,Southpaw,12,4,0,0,1985-03-13
-http://ufcstats.com/fighter-details/a45bab49951a45cd,Tony Johnson,,73.0,265.0,,,11,3,0,0,
 http://ufcstats.com/fighter-details/3641a0d117e9bc6c,Tony Johnson,,74.0,205.0,76.0,Orthodox,7,2,0,0,1983-05-02
+http://ufcstats.com/fighter-details/a45bab49951a45cd,Tony Johnson,,73.0,265.0,,,11,3,0,0,
 http://ufcstats.com/fighter-details/443835675e8fc6ca,Travis Johnson,,,205.0,,,0,1,0,0,
 http://ufcstats.com/fighter-details/3261aa79bf6caa64,Ben Johnston,,76.0,185.0,76.0,Orthodox,5,2,0,0,1990-10-11
 http://ufcstats.com/fighter-details/1c3f5e85b59ec710,Brian Johnston,,75.0,230.0,,Orthodox,5,5,0,0,1968-07-28
@@ -2791,6 +2791,7 @@ http://ufcstats.com/fighter-details/9147679e1a4ad4a3,Richardson Moreira,Rick Mon
 http://ufcstats.com/fighter-details/acb36c908d415c4a,Vinicius Moreira,Mamute,76.0,205.0,76.0,Orthodox,9,5,0,0,1989-02-28
 http://ufcstats.com/fighter-details/2e2cdb6e9eb84bb9,Jesse Moreng,Arturo,67.0,145.0,,Orthodox,9,1,0,0,1979-11-09
 http://ufcstats.com/fighter-details/792be9a24df82ed6,Brandon Moreno,The Assassin Baby,67.0,125.0,70.0,Orthodox,23,10,2,0,1993-12-07
+http://ufcstats.com/fighter-details/0572ebd8e276d66f,Isaac Moreno,Primetime,,170.0,,,8,0,0,0,
 http://ufcstats.com/fighter-details/bb2eee4fb3259c01,Mike Moreno,El Palo Duro,72.0,185.0,,,6,5,0,0,
 http://ufcstats.com/fighter-details/66e98b3bb5fc5250,Dan Moret,The Hitman,72.0,155.0,73.0,Southpaw,13,6,0,0,1986-11-21
 http://ufcstats.com/fighter-details/938ea36fe9c269f0,Alexander Morgan,The Chess Master,70.0,145.0,71.0,Orthodox,11,5,0,0,1991-05-14
