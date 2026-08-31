@@ -28,14 +28,4 @@ def get_data():
     with open(file, "rb") as f:
         ufc_data = pickle.load(f)
 
-    keys = list(ufc_data.keys())
-    print("Data Obtained")
-    print()
-    print('To access a specific dataframe, use its corresponding key below')
-    print(keys)
-    print()
-    print("For example:")
-    print("data = get_data()")
-    print("past_events = data['past_events'].copy()")
-
     return ufc_data
