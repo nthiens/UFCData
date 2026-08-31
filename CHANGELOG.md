@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.3] - 2026-08-31
+## Changed
+-  Removed print_statements from plot_fight_graph(fighter_link, degree, notebook=False)
+-  Removed print statements from get_data()
+
+## [0.8.2] - 2026-08-27
+## Changed
+-  Changed `plot_body` to download fonts from github
+
+## [0.8.1] - 2026-08-27
+## Changed
+-  Changed comments
+
+## [0.8.0] - 2026-08-27
+## Removed
+-  `plot_cv(cv_labels, cv_accuracies, title="Cross Validation Accuracy")` removed
+-  `plot_test(accuracy, title="Test Accuracy")` removed
+### Added
+-  `plot_fight_graph(fighter_link, degree)` added
+-  `plot_body(minimum, maximum, title, head, body, leg, head_label, body_label, leg_label, suffix)` added
+-  `plot_line_graph(title, x_label, x_values, y_label, y_values, average=True)` added
+-  `plot_bar_graph(title, x_label, x_values, y_label, y_values, average=True)` added
+
+## [0.7.4] - 2026-08-27
+## Changed
+-  `get_fighter_history(fighter_link)` refactored to remove parameters
+-  `get_fighter_statistic(fighter_link)` refactored to remove parameters
+-  
 ## [0.7.3] - 2026-08-26
 ## Changed
 -  `search(data, column, query, matches)` refactored
